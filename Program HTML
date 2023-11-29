@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calcul de la racine carrée</title>
+    <script>
+        function calculerRacineCarree() {
+            var inputElement = document.getElementById("nombre");
+            var nombre = parseFloat(inputElement.value);
+            
+            var resultatRacineCarree = Math.sqrt(nombre);
+            var resultatArrondi = Math.round(resultatRacineCarree * 100) / 100; // Arrondir à deux décimales
+            
+            document.getElementById("resultat").innerHTML = "Racine carrée : " + resultatRacineCarree;
+            document.getElementById("resultatArrondi").innerHTML = "Arrondi : " + resultatArrondi;
+        }
+
+        function Aleatoire() {
+            var min = 1;
+            var max = 100;
+            var nombreAleatoire = Math.floor(Math.random() * (max - min + 1)) + min;
+            
+            document.getElementById("nombreAleatoire").innerHTML = "Nombre aléatoire : " + nombreAleatoire;
+        }
+
+        function Aleatoire2(min, max) {
+            var nombreAleatoire = Math.floor(Math.random() * (max - min + 1)) + min;
+            
+            document.getElementById("nombreAleatoire").innerHTML = "Nombre aléatoire entre " + min + " et " + max + " : " + nombreAleatoire;
+        }
+    </script>
+</head>
+<style>
+body{
+background-color: lightblue;
+}
+</style>
+<body>
+<center>
+    <h1>Calcul de la racine carrée</h1>
+    <label for="nombre">Saisissez un nombre : </label>
+    <input type="number" id="nombre">
+    <button onclick="calculerRacineCarree()">Calculer</button>
+    <p id="resultat"></p>
+    <p id="resultatArrondi"></p>
+
+    <button onclick="Aleatoire()">Générer un nombre aléatoire (1-100)</button>
+    <p id="nombreAleatoire"></p>
+
+    <button onclick="Aleatoire2(50, 150)">Générer un nombre aléatoire (50-150)</button>
+    <p id="nombreAleatoire"></p>
+</center>
+</body>
+</html>
